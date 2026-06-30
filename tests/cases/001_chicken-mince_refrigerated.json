@@ -1,0 +1,42 @@
+{
+  "test_case_id": "001_chicken_mince_refrigerated",
+
+  "combase_record_id": "ALC_19",
+
+  "elicited_inputs": {
+    "food_type": "chicken mince",
+    "past_temperature_segments": [
+      {"duration_hours": 24, "temp_c": 4, "label": "refrigerated storage"}
+    ],
+    "time_elapsed_hours": 24,
+    "future_temperature_segments": [
+      {"duration_hours": 6, "temp_c": 4, "label": "remains refrigerated, forecast horizon"}
+    ],
+    "additional_context": "minced chicken, kept refrigerated since purchase"
+  },
+
+  "combase_source_curve_id": "",
+  "ground_truth_initial_log_cfu": null,
+  "ground_truth_curve": {
+    "n_steps": 100,
+    "step_interval_h": 15.1515,
+    "values": []
+  },
+
+  "source_record_details": {
+    "organism": "Aerobic total spoilage bacteria (non-inoculated organism counted; Campylobacter spp. also tracked but separately)",
+    "food_category": "Poultry",
+    "food_name": "Chicken mince",
+    "temperature_c": 4,
+    "aw": 0.982,
+    "ph": "not specified",
+    "conditions": "raw, cut/minced, 1.5% NaCl in environment, refrigerated (4C) -- note: this record is a refrigerated survival study, not a room-temperature growth scenario",
+    "citation": "Sampers et al. 2010, International Journal of Food Microbiology, 137:147-153"
+  },
+
+  "construction_notes": "elicited_inputs constructed to match ALC_19 as found by eyeballing ComBase against known preprocessing steps -- combase_source_curve_id and ground_truth fields still need to be confirmed against the processed pipeline output (combase_food_modeling_grid_raw_phased.csv) before use. ALC_19 is constant 4C refrigerated, not a counter/warm-temperature scenario -- elicited narrative was adjusted to match rather than forcing the original warm-chicken framing onto this record. Not a generalization claim -- used to sanity-check the elicit -> infer -> verdict pipeline end to end.",
+
+  "expected_verdict_qualitative": "",
+
+  "eval_notes": ""
+}
