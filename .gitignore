@@ -1,0 +1,82 @@
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.Python
+*.so
+
+# venvs
+.venv/
+venv/
+env/
+
+# package managers
+.uv/
+uv.lock
+
+# jupyter
+.ipynb_checkpoints/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# type checkers / linters
+.mypy_cache/
+.ruff_cache/
+.pyright/
+
+# logs
+*.log
+logs/
+
+# LangGraph / LangChain
+.langgraph_api/
+.langgraph/
+langgraph_checkpoints/
+*.checkpoint
+
+# wandb
+wandb/
+
+# data and model artifacts (large / regenerable, not source)
+data/*
+!data/lookup_table.csv
+*.csv
+!**/lookup_table.csv
+*.parquet
+*.pkl
+*.pt
+*.pth
+*.ckpt
+
+# combase pipeline raw/intermediate outputs
+combase/data/*
+!combase/data/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# node / frontend (if any tooling gets added later)
+node_modules/
+dist/
+.npm/
+
+# misc local scratch
+*.tmp
+scratch/
