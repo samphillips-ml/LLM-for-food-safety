@@ -143,7 +143,7 @@
     "conditions": "With the indigenous flora in the environment (but not counted)",
     "citation": "Dipartimento di sicurezza alimentare, Istituto Zooprofilattico Sperimentale della Lombardia e dell'Emilia Romagna, Brescia, Italia."
   },
-  "construction_notes": "elicited_inputs derived from ComBase record_id 52889 (Pork / Raw ham (parma_like)). N0 = log_cfu at lowest step. past/future_temperature_segments are an approximate human-readable split of the curve's duration (temperature varies); ground_truth_curve.values is the actual gridded trajectory. Some grid steps may be linearly interpolated between real lab readings rather than directly measured -- this is expected given sparse irregular sampling gridded onto fixed 15.15h intervals, not a data quality issue. Not a generalization claim -- used to sanity-check the elicit -> infer -> verdict pipeline end to end.",
+  "construction_notes": "elicited_inputs derived from ComBase record_id 52889 (Pork / Raw ham (parma_like)). N0 = log_cfu at lowest step. Curve spans the full 100-step / 1500h grid with every step either a real observation or linear interpolation between two real readings -- no gp_posterior fill, no padding past the experiment's end. past/future_temperature_segments are an approximate human-readable split of the curve's duration (temperature varies); ground_truth_curve.values is the actual gridded trajectory. Not a generalization claim -- used to sanity-check the elicit -> infer -> verdict pipeline end to end.",
   "expected_verdict_qualitative": "",
   "eval_notes": ""
 }
