@@ -1,0 +1,20 @@
+<!-- index.html -->
+<!--
+  Bog-standard chat UI. No framework. Purpose is to demo the agent end-to-end
+  and emulate what Sahana's React frontend will do.
+
+  Needs to:
+  - Render a scrollable message history (user + assistant alternating)
+  - Have a text input + send button
+  - On send: POST {message, history} to /chat, open SSE stream
+  - As "token" events arrive: append to current assistant message in real time
+  - On "status" events: show a small status line (e.g. "Running model...")
+  - On "done": finalize message, re-enable input
+  - On "error": show error inline, re-enable input
+  - Maintain history array in JS (array of {role, content} objects) to send with each request
+  - No persistence required — history resets on page refresh, which is fine for demo
+
+  Style lives in style.css. Logic lives in chat.js. This file is just structure.
+
+  Keep it simple. This is a demo scaffold, not a product.
+-->

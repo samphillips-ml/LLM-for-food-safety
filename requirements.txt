@@ -1,0 +1,14 @@
+# requirements.txt
+#
+# Install with: pip install -r requirements.txt
+#
+# Core
+anthropic       # Anthropic API client
+fastapi         # Server
+uvicorn         # ASGI runner for FastAPI
+sse-starlette   # SSE support for FastAPI
+httpx           # Async HTTP (used by FastAPI test client if needed)
+
+# Add when RAG is implemented:
+# chromadb
+# sentence-transformers

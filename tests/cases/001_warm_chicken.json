@@ -1,0 +1,39 @@
+{
+  "_comment": "Test case schema. One file per scenario. Fill in values when implementing eval.",
+
+  "id": "001",
+  "description": "Cooked chicken left at room temperature (~22C) for 12h, user asking about safety for next 24h",
+
+  "prompt": "FILL IN: The opening user message that starts this scenario. Write it naturally, as a real user would type it. Do not mention all five slots upfront — let the agent elicit.",
+
+  "slot_ground_truth": {
+    "_comment": "What the correct slot values are for this scenario. Used to evaluate elicitation accuracy.",
+    "food_type": "cooked_chicken",
+    "past_temp_conditions": "FILL IN",
+    "future_temp_conditions": "FILL IN",
+    "time_since_purchase_h": 12,
+    "additional_context": null
+  },
+
+  "synthetic_curve": {
+    "_comment": "Used by model/inference.py stub when TEST_MODE=True. A plausible log CFU curve for this scenario. Length must be 100 (matches N_STEPS in config.py).",
+    "values": []
+  },
+
+  "expected_output": {
+    "safety_verdict": "unsafe",
+    "reasoning_notes": "FILL IN: 1-3 sentences describing what a correct response looks like. This is your rubric for manual eval. Write it before you run the model.",
+    "key_things_to_check": [
+      "FILL IN: e.g. 'model correctly identifies rapid growth risk above 21C'",
+      "FILL IN: e.g. 'model communicates uncertainty across permutations'",
+      "FILL IN: e.g. 'model does not hedge so much that the safety conclusion is unclear'"
+    ]
+  },
+
+  "eval_notes": {
+    "_comment": "Free-form field. Write observations here after running the model against this case.",
+    "run_date": null,
+    "passed": null,
+    "notes": null
+  }
+}

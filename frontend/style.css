@@ -1,0 +1,14 @@
+/* style.css
+ *
+ * Minimal chat UI styling. Functional over pretty.
+ *
+ * Needs to handle:
+ *   - Full-height layout: header bar, scrollable message area, fixed input row at bottom
+ *   - Message bubbles: user (right-aligned) vs assistant (left-aligned), visually distinct
+ *   - Status line: small, muted, sits above input or inline in message area
+ *   - Input row: text field takes available width, send button fixed width
+ *   - Disabled state for input + button while stream is in progress
+ *
+ * No external dependencies. No CSS framework.
+ * Mobile-readable is a nice-to-have but not required for demo.
+ */
