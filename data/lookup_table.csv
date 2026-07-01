@@ -1,23 +1,36 @@
-# lookup_table.csv
+# initial_log_cfu_lookup.csv
 #
-# Maps food_type → pH range, aw range, initial log CFU range.
-# These are literature-derived starting parameters, not measured values.
-# Agent uses these to construct model inputs and to bound the permutation experiments.
+# Maps food_type -> initial log CFU (N0), anchored to point of processing (t_0),
+# for FRESH's growth model inference. Spoilage/native microbiota is the primary
+# target; pathogen-specific values are included only as a secondary, optional
+# reference when reported alongside the spoilage measurement in the same source.
 #
-# Schema (when populated):
-#   food_type, pH_low, pH_nominal, pH_high, aw_low, aw_nominal, aw_high,
-#   initial_log_cfu_low, initial_log_cfu_nominal, initial_log_cfu_high
+# This table does NOT cover pH or aw. Those are tracked separately.
 #
-# Start with ~5 foods that cover the most common demo scenarios:
-#   cooked_chicken, raw_ground_beef, cooked_rice, deli_meat, fresh_produce
+# Schema:
+#   food_type, N0_spoilage_log_cfu, N0_unit_basis, N0_pathogen_species,
+#   N0_pathogen_log_cfu, N0_measured_or_inferred, N0_processing_stage, N0_source
 #
-# Sources to pull values from:
-#   - ICMSF Microorganisms in Foods tables
-#   - FDA Bad Bug Book
-#   - ComBase companion papers (Tarlak 2023 is a good start)
+# Column notes:
+#   N0_spoilage_log_cfu     - log10 CFU, generic/native microbiota (e.g. APC).
+#                             This is the primary value for growth model anchoring.
+#   N0_unit_basis            - measurement basis, e.g. "CFU/ml rinsate" vs "CFU/g".
+#                             Not interchangeable across sources without conversion.
+#   N0_pathogen_species      - optional, only populated when a pathogen-specific
+#                             value was reported alongside the spoilage value in
+#                             the same source. Leave blank otherwise.
+#   N0_pathogen_log_cfu      - optional, paired with N0_pathogen_species.
+#   N0_measured_or_inferred  - "measured" if from direct survey data, "inferred"
+#                             if derived/extrapolated from other sources.
+#   N0_processing_stage      - where in the supply chain the sample was taken
+#                             (e.g. "end of production line, pre-packaging").
+#                             t_0 is anchored to processing, not purchase.
+#   N0_source                - citation. Self-sourced only, no auto-generated refs.
 #
-# Note: pH and aw are treated as constant per food type (not sensor-estimated).
-# This is a deliberate scope decision — surface parameters via literature, not vision.
-# Initial log CFU range drives the low/nominal/high permutations.
+# Target foods for REU scope: cooked_chicken, raw_ground_beef, cooked_rice,
+# deli_meat, fresh_produce. Note: raw poultry survey data (e.g. FSIS RCPBS) is
+# NOT a valid source for cooked_chicken -- post-kill-step microbial load is a
+# distinct, much lower number and needs its own source.
 #
-# food_type,pH_low,pH_nominal,pH_high,aw_low,aw_nominal,aw_high,initial_log_cfu_low,initial_log_cfu_nominal,initial_log_cfu_high
+# food_type,N0_spoilage_log_cfu,N0_unit_basis,N0_pathogen_species,N0_pathogen_log_cfu,N0_measured_or_inferred,N0_processing_stage,N0_source
+raw_chicken_parts,4.51,CFU/ml rinsate,,,measured,"end of production line, pre-packaging",FSIS Nationwide Raw Chicken Parts Microbiological Baseline Survey 2012
