@@ -34,3 +34,13 @@
 #
 # food_type,N0_spoilage_log_cfu,N0_unit_basis,N0_pathogen_species,N0_pathogen_log_cfu,N0_measured_or_inferred,N0_processing_stage,N0_source
 raw_chicken_parts,4.51,CFU/ml rinsate,,,measured,"end of production line, pre-packaging",FSIS Nationwide Raw Chicken Parts Microbiological Baseline Survey 2012
+raw_ground_beef,4.6,CFU/g,,,measured,"processing plant, finished product","[AUTHOR UNVERIFIED] Food Microbiology pii/S0740002096900945 (single midwestern US plant; verify author/year/volume from paper before citing)"
+fresh_produce_sprouts,8.7,CFU/g,,,measured,retail,"[AUTHOR UNVERIFIED] FDA CFSAN retail produce survey -- verify from PubMed 11952219 before citing"
+fresh_produce_lettuce,8.6,CFU/g,,,measured,retail,"[AUTHOR UNVERIFIED] FDA CFSAN retail produce survey -- verify from PubMed 11952219 before citing"
+fresh_produce_celery,7.5,CFU/g,,,measured,retail,"[AUTHOR UNVERIFIED] FDA CFSAN retail produce survey -- verify from PubMed 11952219 before citing"
+fresh_produce_cauliflower,7.4,CFU/g,,,measured,retail,"[AUTHOR UNVERIFIED] FDA CFSAN retail produce survey -- verify from PubMed 11952219 before citing"
+fresh_produce_broccoli,6.3,CFU/g,,,measured,retail,"[AUTHOR UNVERIFIED] FDA CFSAN retail produce survey -- verify from PubMed 11952219 before citing"
+fresh_produce_leafy_greens_packing,5.5,CFU/g,,,measured,"packing shed post-harvest (geomean range 4.5-6.2; midpoint used)","[AUTHOR UNVERIFIED] field-to-packing survey -- verify from PubMed 16161682 before citing"
+fresh_produce_aggregate,7.3,CFU/g,,,inferred,"mixed retail/packing stages (mean of above 6 commodity values: 8.7+8.6+7.5+7.4+6.3+5.5 / 6)","derived from above rows; LLM maps user input to this when commodity is unspecified"
+dairy_pasteurized_milk,3.5,CFU/ml,,,inferred,"post-pasteurization, pre-retail (PMO limit log 4.3 CFU/ml; typical well-managed US facility well below that; 3.5 used as nominal)","FDA Grade A Pasteurized Milk Ordinance (PMO); cite as FDA PMO -- verify current edition before citing"
+dairy_raw_milk,4.9,CFU/ml,,,inferred,"farm, pre-pasteurization (PMO raw milk ceiling log 5.0 CFU/ml; nominal set just below regulatory limit)","FDA Grade A Pasteurized Milk Ordinance (PMO); cite as FDA PMO -- verify current edition before citing"
